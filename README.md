@@ -1,29 +1,7 @@
-# antd-demo
+AmericanShorthair-Antd
 
-## Project setup
-```
-npm install
-```
+这是一个为了前后端分离构建的基于antd-vue的前端框架。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+后端框架git地址： https://github.com/13872685440/AmericanShorthair
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+框架介绍以及开发手册： https://www.yuque.com/xiaodao-kzwck/kb/huhgbm
