@@ -84,6 +84,29 @@
         </a-row>
         <a-row class="form-row" :gutter="16">
           <a-col :xl="{span: 7}" :lg="{span: 8}" :md="{span: 12}" :sm="24">
+            <a-form-item label="图标库(app)">
+              <a-input v-decorator="[
+              'fontFamily'
+            ]" />
+            </a-form-item>
+          </a-col>
+          <a-col :xl="{span: 7, offset: 1}" :lg="{span: 8}" :md="{span: 12}" :sm="24">
+            <a-form-item label="图标字体代码(app)">
+              <a-input v-decorator="[
+              'fontCode'
+            ]" />
+            </a-form-item>
+          </a-col>
+          <a-col :xl="{span: 7, offset: 1}" :lg="{span: 8}" :md="{span: 12}" :sm="24">
+            <a-form-item label="图标背景颜色(app)">
+              <a-input v-decorator="[
+              'colorCode'
+            ]" />
+            </a-form-item>
+          </a-col>
+        </a-row>
+        <a-row class="form-row" :gutter="16">
+          <a-col :xl="{span: 7}" :lg="{span: 8}" :md="{span: 12}" :sm="24">
             <a-form-item label="icon">
               <a-select
                 showSearch

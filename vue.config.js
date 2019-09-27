@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const SERVICE_URL = "http://192.168.124.111:8080"
+const SERVICE_URL = "http://localhost:8080"
 
 const Model_ = () => { return "" }
 

@@ -34,10 +34,10 @@ export function getInfo() {
 }
 
 export const getRouters = (roles) => {
-  const param = qs.stringify(roles, { arrayFormat: 'repeat' });
   return axios({
-    url: '/system/info/router?' + param,
-    method: 'get'
+    url: '/system/info/router',
+    method: 'post',
+    data: roles
   })
 }
 
