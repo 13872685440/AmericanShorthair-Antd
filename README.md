@@ -11,10 +11,7 @@ AmericanShorthair-Antd
 安装vue-cli脚手架
 npm install -g @vue/cli
 
-创建antd-vue项目
-vue create 项目名
+npm install
 
-将public和src文件夹覆盖项目中对应的文件夹
-
-添加、修改、配置配置文件
+npm start
 
