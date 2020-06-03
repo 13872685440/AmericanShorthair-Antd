@@ -14,6 +14,10 @@ const types = {
   Init:{
     title: '',
     desc: '请初始化系统'
+  },
+  Wait:{
+    title: 'wait',
+    desc: '您的账号正在审批中'
   }
 }
 

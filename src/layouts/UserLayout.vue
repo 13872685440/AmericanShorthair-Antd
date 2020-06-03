@@ -1,5 +1,5 @@
 <template>
-  <div id="userLayout" class="login">
+  <div id="userLayout" :class="['login', device]">
     <div class="head">
       <h2>{{project_name}}</h2>
     </div>
@@ -9,13 +9,13 @@
 
 <script>
 import RouteView from "./RouteView";
-//import { mixinDevice } from '@/utils/mixin'
+import { mixinDevice } from '@/utils/mixin'
 import { PROJECT_NAME } from "@/store/mutation-types";
 
 export default {
   name: "UserLayout",
   components: { RouteView },
-  //mixins: [mixinDevice],
+  mixins: [mixinDevice],
   data() {
     return {
       project_name: PROJECT_NAME
@@ -36,9 +36,8 @@ export default {
   width: 100%;
   .head {
     height: 62px;
-    background-color: #fdfdfd;
-    width: 1080px;
-    margin: 0 auto;
+    background-color: #fff;
+    padding: 0 10%;
     h2 {
       font-size: 16px;
       font-weight: inherit;

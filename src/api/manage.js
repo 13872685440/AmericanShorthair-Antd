@@ -3,7 +3,9 @@ import store from '@/store'
 import qs from 'qs'
 
 export function queryService(url, parameter) {
-  parameter.userId = store.getters.userInfo.id;
+  if (parameter.userId == null || parameter.userId == '') {
+    parameter.userId = store.getters.userInfo.id;
+  }
   const param = qs.stringify(parameter, { arrayFormat: 'repeat' });
   return axios({
     url: url + "?" + param,
@@ -12,7 +14,9 @@ export function queryService(url, parameter) {
 }
 
 export function saveService(url, parameter) {
-  parameter.userId = store.getters.userInfo.id;
+  if (parameter.userId == null || parameter.userId == '') {
+    parameter.userId = store.getters.userInfo.id;
+  }
   const param = qs.stringify(parameter, { arrayFormat: 'repeat' });
   return axios({
     url: url + "?" + param,
@@ -21,15 +25,16 @@ export function saveService(url, parameter) {
 }
 
 export function toService(method, url, parameter) {
-  parameter.userId = store.getters.userInfo.id;
+  if (parameter.userId == null || parameter.userId == '') {
+    parameter.userId = store.getters.userInfo.id;
+  }
   const param = qs.stringify(parameter, { arrayFormat: 'repeat' });
   return axios({
     url: url + "?" + param,
     method: method
   })
 }
-
-export function download(path, params,fileName) {
+export function download(path, params, fileName) {
   axios({
     url: path,
     method: "get",

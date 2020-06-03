@@ -23,7 +23,7 @@
           </div>
           <div class="login_input_content">
             <a-form-item>
-              <a-input
+              <a-input 
                 class="login_input"
                 size="large"
                 type="password"
@@ -48,6 +48,12 @@
             </a-form-item>
           </div>
         </a-form>
+        <div class="login_input_content">
+          <router-link :to="{ name: 'registration'}">
+            <a href style="float:left">注册账号</a>
+          </router-link>
+          <a href style="float:right">忘记密码</a>
+        </div>
       </div>
     </div>
   </div>

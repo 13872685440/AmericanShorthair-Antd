@@ -59,3 +59,10 @@ export function makepwd(parameter) {
   })
 }
 
+export function getYzm(phone) {
+  return axios({
+    url: '/system/sms/send_registration?phone='+phone,
+    method: 'post'
+  })
+}
+

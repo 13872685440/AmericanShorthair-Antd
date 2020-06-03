@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const createThemeColorReplacerPlugin = require('./config/plugin.config')
 const SERVICE_URL = "http://localhost:8080"
 
 const Model_ = () => { return "" }
@@ -13,7 +14,8 @@ module.exports = {
   configureWebpack: {
     plugins: [
       // Ignore all locale files of moment.js
-      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+      createThemeColorReplacerPlugin()
     ]
   },
 

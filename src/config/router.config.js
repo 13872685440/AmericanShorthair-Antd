@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { UserLayout, BasicLayout, RouteView } from '@/layouts'
+import { UserLayout, RouteView } from '@/layouts'
 
 /**
  * 基础路由
@@ -20,6 +20,19 @@ export const constantRouterMap = [
     ]
   },
   {
+    path: '/registration', // 注册
+    component: UserLayout,
+    redirect: '/registration',
+    hidden: true,
+    children: [
+      {
+        path: '',
+        name: 'registration',
+        component: () => import(/* webpackChunkName: "user" */ '@/views/user/Registration')
+      }
+    ]
+  },
+  {
     path: '/init', // 初始化
     component: RouteView,
     redirect: '/init',
@@ -29,6 +42,19 @@ export const constantRouterMap = [
         path: '',
         name: 'init',
         component: () => import(/* webpackChunkName: "init" */ '@/views/user/Init')
+      }
+    ]
+  },
+  {
+    path: '/wait', // 初始化
+    component: RouteView,
+    redirect: '/wait',
+    hidden: true,
+    children: [
+      {
+        path: '',
+        name: 'wait',
+        component: () => import(/* webpackChunkName: "init" */ '@/views/user/Wait')
       }
     ]
   },

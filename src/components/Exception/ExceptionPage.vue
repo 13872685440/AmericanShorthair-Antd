@@ -4,7 +4,12 @@
       <h1>{{ config[type].title }}</h1>
       <div class="desc">{{ config[type].desc }}</div>
       <div class="actions">
-        <a-button type="primary" @click="handleToHome" v-if="config[type].title!=''">返回首页</a-button>
+        <a-button type="primary" @click="handleToHome" v-if="config[type].title!='' && config[type].title!='wait'">返回首页</a-button>
+        <a-button
+          type="primary"
+          @click="handleToLogin"
+          v-if="config[type].title!='' && config[type].title==='wait'"
+        >返回登录页</a-button>
         <a-button type="primary" @click="init_system" v-if="config[type].title===''">初始化</a-button>
       </div>
     </div>
@@ -12,6 +17,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import types from "./type";
 import { initdata } from "@/api/login";
 
@@ -29,8 +35,14 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["Logout"]),
     handleToHome() {
       this.$router.push({ name: "index" });
+    },
+    handleToLogin() {
+      this.Logout({}).then(() => {
+        window.location.reload();
+      });
     },
     init_system() {
       const that = this;
